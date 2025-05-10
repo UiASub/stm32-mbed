@@ -3,3 +3,5 @@
 projectfiles
 *.py*
 mbed-os
+BUILD
+mbed-http-client

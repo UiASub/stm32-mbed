@@ -1,0 +1,9 @@
+{
+    "target_overrides": {
+        "*": {
+            "platform.stdio-baud-rate"       : 115200,
+            "mbed-trace.enable"              : 1,
+            "target.network-default-interface-type": "ETHERNET"
+        }
+    }
+}
