@@ -21,6 +21,32 @@
 #define STATIC_GATEWAY "192.168.68.1"
 /* --------------------------------------------------------------------- */
 
+typedef struct {
+    float acceleration;
+    float velocity;
+} mailTx_t;
+
+typedef struct {
+    // Velocity
+    float x;
+    float y;
+    float z;
+    float yaw;
+    float pitch;
+    float roll;
+    // Lights
+    uint8_t led1_dimm;
+    uint8_t led2_dimm;
+    uint8_t led3_dimm;
+    uint8_t led4_dimm;
+    // Control
+    uint16_t depth;
+    size_t emergency_ascent;
+} mailRx_t;
+
+Mail<mailTx_t, 8> mailTx;
+Mail<mailRx_t, 8> mailRx;
+
 Thread thread_UpDownComm;
 
 void ThreadFunc_HTTP_GET() 
@@ -28,7 +54,7 @@ void ThreadFunc_HTTP_GET()
     EthernetInterface net;
     while (1) 
     {
-        printf("DOWNSIDE HTTP-SERVER STARTING...\r\n");                
+        printf("\nDOWNSIDE HTTP-SERVER STARTING...\r\n");                
 
         nsapi_error_t err = net.set_network(STATIC_IP, STATIC_NETMASK, STATIC_GATEWAY);
         if (err) 
@@ -51,6 +77,8 @@ void ThreadFunc_HTTP_GET()
         server.bind(80);
         server.listen(5);
         printf("Listening on port 80...\r\n");
+
+        mailTx_t temp_Rx;
 
         while (1)
         {
@@ -92,7 +120,7 @@ void ThreadFunc_HTTP_GET()
                 }
             }
             printf("\n=== Receiving HTTP request ===\n");
-            printf("%s\n", request.c_str());
+            //printf("%s\n", request.c_str());
 
             if (request.rfind("POST", 0) == 0)
             {
@@ -104,6 +132,17 @@ void ThreadFunc_HTTP_GET()
                 }
             }
 
+            /* === Process data to send === */
+            // Get data from Tx Queue
+            mailTx_t *Tx_Data = mailTx.try_get();
+            // Remember last sent acceleration/velocity data
+            temp_Rx.acceleration = Tx_Data->acceleration;
+            temp_Rx.velocity = Tx_Data->velocity;
+            // Free Tx Queue
+            mailTx.free(Tx_Data);
+
+            /* === Create HTTP-response to send with data === */
+
             const char *response_fmt = 
                 "HTTP/1.1 200 OK\r\n"
                 "Content-Type: text/plain\r\n"
@@ -112,9 +151,16 @@ void ThreadFunc_HTTP_GET()
                 "Received %d byte in POST\n";
             char response[128];
             int len = sprintf(response, response_fmt, content_length);
-            client->send(response, len);
-            
+            client->send(response, len);  
+
             client->close();
+
+            /* === Process received data === */
+            
+            // Put processed data on Rx Queue 
+            mailRx_t *Rx_Data = mailRx.try_alloc();
+
+
         }
         net.disconnect();
         osThreadExit();
