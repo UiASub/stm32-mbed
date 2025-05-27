@@ -23,7 +23,6 @@ BUILD\NUCLEO_F767ZI\ARMC6\mbed-os\connectivity\mbedtls\source\ssl_tls.o: \
   mbed-os\connectivity\mbedtls\include\mbedtls\x509_crl.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\ecdh.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\ssl_internal.h \
-  mbed-os\connectivity\mbedtls\include\mbedtls\sha1.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\sha256.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\sha512.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\debug.h \

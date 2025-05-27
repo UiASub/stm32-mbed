@@ -323,12 +323,4 @@ BUILD\NUCLEO_F767ZI\ARMC6\main.o: main.cpp \
   mbed-os\connectivity\netsocket\include\netsocket\OnboardNetworkStack.h \
   mbed-os\connectivity\netsocket\include\netsocket\L3IP.h \
   mbed-os\connectivity\netsocket\include\netsocket\PPP.h \
-  mbed-os\connectivity\netsocket\include\netsocket\SocketAddress.h \
-  mbed-http-client\http_request.h mbed-http-client\http_request_base.h \
-  mbed-http-client\http_parser\http_parser.h \
-  mbed-http-client\http_parsed_url.h \
-  mbed-http-client\http_request_builder.h \
-  mbed-http-client\http_request_parser.h \
-  mbed-http-client\http_response.h \
-  mbed-os\connectivity\netsocket\include\netsocket\NetworkInterface.h \
   mbed-os\connectivity\netsocket\include\netsocket\TCPSocket.h

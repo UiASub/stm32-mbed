@@ -2,7 +2,7 @@
     {
         "module": "[lib]\\c_w.l",
         "size": {
-            ".text": 6282,
+            ".text": 5676,
             ".data": 16,
             ".bss": 348,
             ".text-delta": 0,
@@ -24,7 +24,7 @@
     {
         "module": "[lib]\\libcpp_w.l",
         "size": {
-            ".text": 745,
+            ".text": 513,
             ".data": 0,
             ".bss": 0,
             ".text-delta": 0,
@@ -57,21 +57,10 @@
     {
         "module": "main.o",
         "size": {
-            ".text": 8946,
+            ".text": 3676,
             ".data": 0,
             ".bss": 188,
-            ".text-delta": 0,
-            ".data-delta": 0,
-            ".bss-delta": 0
-        }
-    },
-    {
-        "module": "mbed-http-client\\http_parser",
-        "size": {
-            ".text": 12686,
-            ".data": 0,
-            ".bss": 0,
-            ".text-delta": 0,
+            ".text-delta": -1,
             ".data-delta": 0,
             ".bss-delta": 0
         }
@@ -90,7 +79,7 @@
     {
         "module": "mbed-os\\connectivity",
         "size": {
-            ".text": 69136,
+            ".text": 69211,
             ".data": 103,
             ".bss": 23540,
             ".text-delta": 0,
@@ -134,7 +123,7 @@
     {
         "module": "mbed-os\\platform",
         "size": {
-            ".text": 11327,
+            ".text": 11315,
             ".data": 128,
             ".bss": 373,
             ".text-delta": 0,
@@ -145,7 +134,7 @@
     {
         "module": "mbed-os\\rtos",
         "size": {
-            ".text": 1754,
+            ".text": 1667,
             ".data": 0,
             ".bss": 8,
             ".text-delta": 0,
@@ -168,8 +157,8 @@
         "summary": {
             "static_ram": 37681,
             "static_ram_delta": 0,
-            "total_flash": 145697,
-            "total_flash_delta": 0
+            "total_flash": 126879,
+            "total_flash_delta": -1
         }
     }
 ]

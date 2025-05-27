@@ -32,7 +32,6 @@ BUILD\NUCLEO_F767ZI\ARMC6\mbed-os\connectivity\mbedtls\source\error.o: \
   mbed-os\connectivity\mbedtls\include\mbedtls\rsa.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\ecdsa.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\pem.h \
-  mbed-os\connectivity\mbedtls\include\mbedtls\sha1.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\sha256.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\ssl.h \
   mbed-os\connectivity\mbedtls\include\mbedtls\ssl_ciphersuites.h \

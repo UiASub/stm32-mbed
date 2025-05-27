@@ -23,7 +23,6 @@
 
 // Configuration parameters
 #define CLOCK_SOURCE                                                          USE_PLL_HSE_EXTC|USE_PLL_HSI                                                                     // set by target:MCU_STM32F7
-#define HTTP_RECEIVE_BUFFER_SIZE                                              8192                                                                                             // set by library:mbed-http
 #define LPTICKER_DELAY_TICKS                                                  0                                                                                                // set by target:MCU_STM32F7
 #define MBED_CONF_ALT1250_PPP_BAUDRATE                                        115200                                                                                           // set by library:ALT1250_PPP
 #define MBED_CONF_ALT1250_PPP_PROVIDE_DEFAULT                                 0                                                                                                // set by library:ALT1250_PPP
@@ -417,7 +416,6 @@
 #define STM32_D11_SPI_ETHERNET_PIN                                            PA_7                                                                                             // set by target:NUCLEO_F767ZI
 // Macros
 #define MBEDTLS_CIPHER_MODE_CTR                                                                                                                                                // defined by library:SecureStore
-#define MBEDTLS_SHA1_C                                                                                                                                                         // defined by library:mbed-http
 #define NSAPI_PPP_AVAILABLE                                                   (MBED_CONF_PPP_ENABLED || MBED_CONF_LWIP_PPP_ENABLED)                                            // defined by library:ppp
 #define NSDYNMEM_TRACKER_ENABLED                                              MBED_CONF_NANOSTACK_LIBSERVICE_NSDYNMEM_TRACKER_ENABLED                                          // defined by library:nanostack-libservice
 #define NS_USE_EXTERNAL_MBED_TLS                                                                                                                                               // defined by library:nanostack
